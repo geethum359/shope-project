@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+  {% block title %}
+      login
+  {% endblock %}
+
+{% block content %}
+<div class="login-box">
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="user-box">
+      <input type="text" name="n" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="p" required="">
+      <label>Password</label>
+    </div>
+    <button class="button type3" type="submit">
+      Login Now
+    </button>
+    <a href="{% url 'password_reset' %}">forgot password</a>
+  </form>
+</div>
+{% endblock %}
+  
+
+
+
+
+
+
+
+

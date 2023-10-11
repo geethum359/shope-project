@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+    category
+{% endblock %}
+{% load static %}
+{% block content %}
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-3">
+                {% for val in name %}
+                <a href="#">{{val.name}}</a>
+                {% endfor  %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %} 

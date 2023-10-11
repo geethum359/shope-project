@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} {{d.category}} {% endblock %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row flex details">
+            <div class="col-lg-5   pro-image">
+                    <img src="{{products.pro_image.url}}"  height="400" width="400"  alt="{{products.pro_name}}">
+            </div>
+            <div class="col-lg-5">
+                    <div class="description">
+                        <h2>{{products.pro_name}}</h2><br>
+                        <p> Rs.{{products.pro_price}}/-</p>
+                        <h5>product features</h5>
+                        <h6>{{products.description}}</h6>
+                    </div>
+                    <div class="mt-5">
+                        <a href="{% url 'add_to_cart' products.id %}">
+                            <button class="buy-button">Add to Cart</button>
+                        </a>
+                        
+                        <button class="buy-button">Buy Now</button>
+                    
+                    </div>
+                    
+            </div>
+            <div class="col-2 back">
+               
+                    <a class="nav-link" href="{% url 'home' %}">back to home</a>
+                
+               
+            </div>
+        </div>
+        
+        <br><br><br><br> <br><br><br><br>
+    </div>
+
+   
+{% endblock %}
